@@ -1,0 +1,278 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% macro displayMain(object, color) %}
+     <div class="d-flex mb-2">
+        <div class="text-white p-4 mr-3 border rounded" style="background-color: {{color|trim}}">
+            <h1 class="display-4">{{object.data.aqi}}</h1>
+        </div>
+        <div class="align-middle my-auto w-100">
+            <h1 class="align-middle my-auto ">{{object.data.city.name}}</h1>
+            <br>
+            <em class="">Updated at {{object.data.time.s}}</em>
+        </div>
+    </div>
+{% endmacro %}
+{% macro airQualityDescription(aqi, color) %}
+    {% if aqi <= 50 %}
+        {{_self.airPollutionStatus(
+            'Good', 
+            'Air quality is considered satisfactory, and air pollution poses little or no risk',
+            'None',
+            color
+        )}}
+    {% elseif aqi >= 50 and aqi < 100 %}
+        {{_self.airPollutionStatus(
+            'Moderate',
+            'Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution.',
+            'Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.',
+            color
+        )}}
+    {% elseif aqi >= 100 and aqi < 150 %}
+        {{_self.airPollutionStatus(
+            'Unhealthy for Sensitive Groups',
+            'Members of sensitive groups may experience health effects. The general public is not likely to be affected.',
+            'Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.',
+            color
+        )}}
+    {% elseif aqi >= 150 and aqi < 200 %}
+        {{_self.airPollutionStatus(
+            'Unhealthy',
+            'Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects',
+            'Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion',
+            color
+        )}}
+    {% elseif aqi >= 200 and aqi < 300 %}
+        {{_self.airPollutionStatus(
+            'Very Unhealthy',
+            'Health warnings of emergency conditions. The entire population is more likely to be affected.',
+            'Active children and adults, and people with respiratory disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should limit outdoor exertion.',
+            color
+        )}}
+    {% elseif aqi >= 300 and aqi < 500 %}
+        {{_self.airPollutionStatus(
+            'Hazardous',
+            'Health alert: everyone may experience more serious health effects',
+            'Everyone should avoid all outdoor exertion',
+            color
+        )}}
+    {% endif %}
+{% endmacro %}
+{% macro airPollutionStatus(airPollutionLevel, healthImplication, cautionaryStatement, color) %}
+    <div class="container text-white border rounded box-shadow" style="background-color: {{color|trim}}">
+        <div class="row border-bottom rounded pb-3 pt-3">
+            <div class="col-3 font-weight-bold">
+                Air Pollution Level
+            </div>
+            <div class="col-5 font-weight-bold">
+                Health Implications
+            </div>
+            <div class="col-4 font-weight-bold">
+                Cautionary Statement (for PM2.5)
+            </div>
+        </div>
+        <div class="row border-0 rounded pb-4 pt-4">
+            <div class="col-3">
+                <strong>
+                {{airPollutionLevel}}
+                </strong>
+            </div>
+            <div class="col-5">
+                <strong>
+                {{healthImplication}}
+                </strong>
+            </div>
+            <div class="col-4">
+                <strong>
+                {{cautionaryStatement}}
+                </strong>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% macro airQualityColorSetter(aqi) %}
+    {% if aqi <= 50 %}
+        {% set color = '#449A66' %}
+    {% elseif aqi >= 50 and aqi < 100 %}
+        {% set color = '#1DA488' %}
+    {% elseif aqi >= 100 and aqi < 150 %}
+        {% set color = '#F99932' %}
+    {% elseif aqi >= 150 and aqi < 200 %}
+        {% set color = '#CE3B34' %}
+    {% elseif aqi >= 200 and aqi < 300 %}
+        {% set color = '#6A4299' %}
+    {% elseif aqi >= 300 and aqi < 500 %}
+        {% set color = '#7F2223' %}
+    {% endif %}
+    {{color}}
+{% endmacro %}
+{% macro setGases(iaqi) %}
+    <div class="container mt-5 pr-3 pl-3 border rounded box-shadow">
+        <div class="row p-2">
+            <div class="col-12">
+                <h4>Air particles</h4>
+            </div>
+        </div>
+        {% if iaqi.pm25.v is defined %}
+            <div class="row border-top p-3">
+                <div class="col-6">
+                    <h6>PM2.5</h6>
+                </div>
+                <div class="col-6">
+                    <h6>{{iaqi.pm25.v}}</h6>
+                </div>
+            </div>
+        {% endif %}
+        {% if iaqi.pm10.v is defined %}
+            <div class="row border-top p-3">
+                <div class="col-6">
+                    <h6>PM10</h6>
+                </div>
+                <div class="col-6">
+                    <h6>{{iaqi.pm10.v}}</h6>
+                </div>
+            </div>
+        {% endif %}
+        {% if iaqi.o3.v is defined %}
+            <div class="row border-top p-3">
+                <div class="col-6">
+                    <h6>03</h6>
+                </div>
+                <div class="col-6">
+                    <h6>{{iaqi.o3.v}}</h6>
+                </div>
+            </div>        
+        {% endif %}
+        {% if iaqi.no2.v is defined %}
+            <div class="row border-top p-3">
+                <div class="col-6">
+                    <h6>NO2</h6>
+                </div>
+                <div class="col-6">
+                    <h6>{{iaqi.no2.v}}</h6>
+                </div>
+            </div>
+        {% endif %}
+        {% if iaqi.so2.v is defined %}
+            <div class="row border-top p-3">
+                <div class="col-6">
+                    <h6>SO2</h6>
+                </div>
+                <div class="col-6">
+                    <h6>{{iaqi.so2.v}}</h6>
+                </div>
+            </div>
+        {% endif %}
+        {% if iaqi.co.v is defined %}
+            <div class="row border-top p-3">
+                <div class="col-6">
+                    <h6>CO</h6>
+                </div>
+                <div class="col-6">
+                    <h6>{{iaqi.co.v}}</h6>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}
+{% macro setWeather(iaqi) %}
+    <div class="container mt-5 mb-2  pr-3 pl-3 border rounded box-shadow">
+        <div class="row p-2">
+            <div class="col-12">
+                <h4>Weather data</h4>
+            </div>
+        </div>
+         <div class="row border-top p-3">
+            <div class="col-6">
+                <h6>Pressure</h6>
+            </div>
+            <div class="col-6">
+                <h6>{{iaqi.p.v}} PA</h6>
+            </div>
+        </div>
+        <div class="row border-top p-3">
+            <div class="col-6">
+                <h6>Temperature</h6>
+            </div>
+            <div class="col-6">
+                <h6>{{iaqi.t.v}} ºC</h6>
+            </div>
+        </div>
+        <div class="row border-top p-3">
+            <div class="col-6">
+                <h6>Air humidity</h6>
+            </div>
+            <div class="col-6">
+                <h6>{{iaqi.h.v}}%</h6>
+            </div>
+        </div>
+        <div class="row border-top p-3">
+            <div class="col-6">
+                <h6>Wind</h6>
+            </div>
+            <div class="col-6">
+                <h6>{{iaqi.w.v}} km/h</h6>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% macro displayUrlSource(city) %}
+     <em class="float-right mt-3 mb-5">
+        Source from: 
+        <a class="text-decoration-none" 
+            href="{{city}}">{{city}}
+        </a>
+    </em>
+{% endmacro %}
+{% block body %}
+    {{_self.displayNavbar()}}
+    {% if object.status == "ok" %}
+        <div class="container">
+            {% set color = _self.airQualityColorSetter(object.data.aqi)%}
+            {{_self.displayMain(object, color)}}
+            {{_self.airQualityDescription(object.data.aqi, color)}}
+            {{_self.setGases(object.data.iaqi)}}
+            {{_self.setWeather(object.data.iaqi)}}
+            {{_self.displayUrlSource(object.data.city.url)}}
+        </div>
+        <div id="map" class="h-100 w-100 border-rounded rounded mb-5 box-shadow" ><div>
+        <input type="hidden" id="lat" value="{{object.data.city.geo[0]}}">
+        <input type="hidden" id="long" value="{{object.data.city.geo[1]}}">
+    {% elseif object.status == "error" %}
+        <div class="text-center">
+            <h1 class="display-2">That's bad!</h1>
+            <h1>The city you're trying to find is not registered on <a href="https://aqicn.org/">aqicn.org</a></h1>
+            <p>Maybe there's no form to calculate the data, or not resources to know it.</p>
+            <em>Message: {{object.data}}</em>
+        </div>
+    {% endif %}
+    {% block stylesheets %}
+        <style>
+            body {
+                background-color: white !important;
+            }
+        </style>
+    {% endblock %}
+    {% block javascripts %}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEQGPMe9zgHRZoR-zsmwYobl4ebKRbAEY&callback=initMap"
+        type="text/javascript"></script>
+    <script>	
+    var map;
+    var latitude = parseFloat(document.getElementById('lat').value);
+    var long = parseFloat(document.getElementById('long').value);
+    console.log(latitude, long)
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: latitude, lng: long},
+            zoom: 13,
+        });
+        var marker = new google.maps.Marker({
+            position: {lat: latitude, lng: long},
+            map: map,
+        title: 'Your city'
+        });
+    }
+    </script>
+    {% endblock %}
+{% endblock %}
