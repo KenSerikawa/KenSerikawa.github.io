@@ -19,11 +19,37 @@ body {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0em !important;
 }
-
-.special-font {
-
+.headline, 
+.designation {
     background-color: white !important;
     color: rgb(26, 26, 26)  !important;
+
+    padding-right: .1em;
+    padding-left: .1em;
+}
+span.special-font {
+	background-image: linear-gradient(#ffffff, #fff);
+	background-repeat: no-repeat;
+	background-position: 0% 100%;
+    background-size: 100% 2px;
+    color: white;
+	transition: color .5s, background-size .5s, background-position .3s ease-in .5s;
+}
+.jobs-content:hover span.special-font,
+.skills-content:hover span.special-font,
+.languages-content:hover span.special-font{
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+    color: black;
+	transition: color .7s, background-position .5s, background-size .3s ease-in .5s;
+}
+@keyframes whiteToBlack {
+    from {
+        color: white;
+    }
+    to {
+        color: black;
+    }
 }
 
 a {
@@ -48,6 +74,9 @@ ul {
     }
 
     .headline {
+        font-size: .7em !important;
+    }
+    .designation {
         font-size: .8em !important;
     }
 
