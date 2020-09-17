@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap');
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(26, 26, 26) !important;
+    color: white !important;
+}
+
+.special-font {
+    font-family: 'Zilla Slab Highlight', cursive;
+}
+
+ul {
+    list-style-type: square;   
+}
