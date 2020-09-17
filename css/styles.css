@@ -23,9 +23,14 @@ body {
 .designation {
     background-color: white !important;
     color: rgb(26, 26, 26)  !important;
-
     padding-right: .1em;
     padding-left: .1em;
+}
+.sub-headline {
+    margin-top: .7em !important;
+}
+.designation {
+    margin-top: 12em !important;
 }
 span.special-font {
 	background-image: linear-gradient(#ffffff, #fff);
@@ -78,6 +83,7 @@ ul {
     }
     .designation {
         font-size: .8em !important;
+        margin-top: .25rem!important;
     }
 
     .content {
