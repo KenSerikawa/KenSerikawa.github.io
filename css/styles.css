@@ -81,6 +81,10 @@ ul {
     .headline {
         font-size: .7em !important;
     }
+
+    .sub-headline {
+        margin-top: .1em !important;
+    }
     .designation {
         font-size: .8em !important;
         margin-top: .25rem!important;
