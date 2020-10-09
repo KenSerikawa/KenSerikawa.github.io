@@ -65,7 +65,15 @@ a {
 ul {
     list-style-type: square;   
 }
-
+/* .php-font {
+    background-color: rgb(51, 29, 151);
+    padding: 2px;
+}
+.js-font {
+    background-color: rgb(255, 251, 0);
+    color: black;
+    padding: 2px;
+} */
 
 @media screen and (max-width: 500px) {
     .header {
@@ -104,4 +112,5 @@ ul {
     .footer-contact {
         display: block !important;
     }
+
 }
