@@ -65,6 +65,19 @@ a {
 ul {
     list-style-type: square;   
 }
+
+.animate__delay-5ds {
+    animation-delay: 0.5s;
+}
+
+.animate__delay-1ds {
+    animation-delay: 1s;
+}
+
+.animate__delay-15ds {
+    animation-delay: 1.5s;
+}
+
 /* .php-font {
     background-color: rgb(51, 29, 151);
     padding: 2px;
