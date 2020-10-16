@@ -62,20 +62,140 @@ a {
     text-decoration-style: none !important;
     color: white !important;
 }
+
 ul {
-    list-style-type: square;   
+    list-style-type: none;   
 }
 
+li.languages-item::before {
+    content: '⌨';
+}
+
+li.languages-item > ul > li::before {
+    content: '↳';
+}
+
+li::before {
+    content: '↳';
+    font-size: 18px;
+}
 .animate__delay-5ds {
     animation-delay: 0.5s;
 }
+.animate__delay-6ds {
+    animation-delay: 0.6s;
+}
+.animate__delay-7ds {
+    animation-delay: 0.7s;
+}
+.animate__delay-8ds {
+    animation-delay: 0.8s;
+}
+.animate__delay-9ds {
+    animation-delay: 0.9s;
+}
 
-.animate__delay-1ds {
+.animate__delay-10ds {
     animation-delay: 1s;
+}
+.animate__delay-11ds {
+    animation-delay: 1.1s;
+}
+.animate__delay-12ds {
+    animation-delay: 1.2s;
+}
+
+.animate__delay-13ds {
+    animation-delay: 1.3s;
+}
+
+.animate__delay-14ds {
+    animation-delay: 1.4s;
+}
+
+.animate__delay-16ds {
+    animation-delay: 1.6s;
+}
+
+.animate__delay-17ds {
+    animation-delay: 1.7s;
+}
+
+.animate__delay-18ds {
+    animation-delay: 1.8s;
+}
+
+.animate__delay-19ds {
+    animation-delay: 1.9s;
 }
 
 .animate__delay-15ds {
     animation-delay: 1.5s;
+}
+
+.animate__delay-20ds {
+    animation-delay: 2s;
+}
+
+.animate__delay-21ds {
+    animation-delay: 2.1s;
+}
+.animate__delay-22ds {
+    animation-delay: 2.2s;
+}
+.animate__delay-23ds {
+    animation-delay: 2.3s;
+}
+.animate__delay-24ds {
+    animation-delay: 2.4s;
+}
+.animate__delay-25ds {
+    animation-delay: 2.5s;
+}
+.animate__delay-26ds {
+    animation-delay: 2.6s;
+}
+.animate__delay-27ds {
+    animation-delay: 2.7s;
+}
+.animate__delay-28ds {
+    animation-delay: 2.8s;
+}
+.animate__delay-29ds {
+    animation-delay: 2.9s;
+}
+.animate__delay-30ds {
+    animation-delay: 3s;
+}
+.animate__delay-31ds {
+    animation-delay: 3.1s;
+}
+.animate__delay-32ds {
+    animation-delay: 3.2s;
+}
+.animate__delay-33ds {
+    animation-delay: 3.3s;
+}
+.animate__delay-34ds {
+    animation-delay: 3.4s;
+}
+.animate__delay-35ds {
+    animation-delay: 3.5s;
+}
+.animate__delay-36ds {
+    animation-delay: 3.6s;
+}
+.animate__delay-37ds {
+    animation-delay: 3.7s;
+}
+.animate__delay-38ds {
+    animation-delay: 3.8s;
+}
+.animate__delay-39ds {
+    animation-delay: 3.9s;
+}
+.animate__delay-40ds {
+    animation-delay: 4s;
 }
 
 /* .php-font {
