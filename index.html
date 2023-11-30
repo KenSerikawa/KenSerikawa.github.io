@@ -22,32 +22,29 @@
     <div class="container mx-auto mt-8 p-4">
         <div class="bg-white p-6 rounded-lg ">
             <div class="flex flex-col md:flex-row justify-between items-center mb-6">
-    <section class="mb-6 md:mb-0">
-        <h1 class="text-2xl font-bold mb-2">Ken Serikawa</h1>
-        <p class="text-gray-600">Backend Developer</p>
-        <p class="text-gray-600">
-            <span id="email" class="cursor-pointer text-blue-500" onclick="copyToClipboard('kenserikawalucio@gmail.com')">kenserikawalucio@gmail.com</span>
-            <span id="copiedMessage" class="text-green-500 ml-2 hidden">Copied!</span>
-        </p>
-    </section>
-    <div class="flex space-x-4">
-        <p class="text-gray-600">
-            <a href="https://github.com/kenserikawa" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github fa-lg mr-1"></i> GitHub
-            </a>
-        </p>
-        <p class="text-gray-600">
-            <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin-in fa-lg mr-1"></i> LinkedIn
-            </a>
-        </p>
-    </div>
-</div>
+                <section class="mb-6 md:mb-0 sm:text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
+                    <h1 class="text-2xl font-bold mb-2">Ken Serikawa</h1>
+                    <p class="text-gray-600">Backend Developer</p>
+                    <p class="text-gray-600">
+                        <span id="email" class="cursor-pointer text-blue-500" onclick="copyToClipboard('kenserikawalucio@gmail.com')">kenserikawalucio@gmail.com</span>
+                    </p>
+                    <span id="copiedMessage" class="text-green-500 m-2 hidden">Copied!</span>
+                </section>
+                <div class="flex space-x-4">
+                    <p class="text-gray-600">
+                        <a href="https://github.com/kenserikawa" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github fa-lg mr-1"></i> GitHub
+                        </a>
+                    </p>
+                    <p class="text-gray-600">
+                        <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in fa-lg mr-1"></i> LinkedIn
+                        </a>
+                    </p>
+                </div>
+            </div>
             </div>
             <hr class="my-2 border-t border-gray-300">
-
-
-
             <!-- Work Experience Section -->
             <section class="mb-6">
                 <h2 class="text-xl font-semibold mb-2">Work Experience</h2>
@@ -136,7 +133,6 @@
 
 <script>
     function copyToClipboard(text) {
-        // Create a temporary input element
         var tempInput = document.createElement("input");
         tempInput.value = text;
         document.body.appendChild(tempInput);
@@ -144,14 +140,12 @@
         document.execCommand("copy");
         document.body.removeChild(tempInput);
 
-        // Show "Copied!" message
         var copiedMessage = document.getElementById("copiedMessage");
         copiedMessage.classList.remove("hidden");
 
-        // Hide "Copied!" message after 2 seconds
         setTimeout(function() {
             copiedMessage.classList.add("hidden");
-        }, 2000);
+        }, 20000);
     }
 </script>
 </body>
