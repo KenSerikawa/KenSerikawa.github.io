@@ -39,12 +39,12 @@
 
                     <div class="flex space-x-4">
                         <p class="text-gray-100">
-                            <a href="https://github.com/kenserikawa" class="text-yellow-200 hover:text-yellow-400" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/kenserikawa" class="text-yellow-200 font-semibold hover:text-yellow-400" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github fa-lg mr-1"></i> GitHub
                             </a>
                         </p>
                         <p class="text-gray-100">
-                            <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-blue-100 hover:text-blue-300" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-blue-100 font-semibold hover:text-blue-300" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-linkedin-in fa-lg mr-1"></i> LinkedIn
                             </a>
                         </p>
@@ -57,7 +57,7 @@
                     <h2 class="text-xl font-semibold mb-2"><code class="border border-black">whoami</code></h2>
                     <p class="text-gray-100">
                         I am a dedicated and curious individual with a passion for programming, seeking opportunities as a backend developer. 
-                        Bringing <span id="lifeDays" class="text-green-400">...</span> days of life experience, I am committed to contributing to the ever-evolving field of technology through continuous learning and hands-on problem-solving.
+                        Bringing <span id="lifeDays" class="font-semibold text-blue-400">...</span> days of life experience, I am committed to contributing to the ever-evolving field of technology through continuous learning and hands-on problem-solving. I am currently on my <span id="devDays" class="font-semibold text-green-400">...</span> as a tech enthusiast.
                     </p>
                 </section>
                 <!-- Work Experience Section -->
@@ -172,18 +172,16 @@
 
     function returnDaysSince(date) {
         var startDate = new Date(date); 
-        var currentDate = new Date();
-
+        var currentDate = new Date();   
         var timeDifference = currentDate.getTime() - startDate.getTime();
-
         var daysSince = Math.floor(timeDifference / (1000 * 3600 * 24));
-
-        return daysSince;
+        var formattedDays = daysSince.toLocaleString(undefined, { minimumIntegerDigits: 5 });
+        return formattedDays.replace(/^0+/, '');;
     }
 
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('lifeDays').innerText = returnDaysSince('1996/05/29');
-        document.getElementById('devDays').innerText = returnDaysSince('2019/04/01');
+        document.getElementById('devDays').innerText = returnDaysSince('2018/04/01');
     });
 </script>
 </body>
