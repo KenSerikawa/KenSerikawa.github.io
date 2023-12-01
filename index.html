@@ -12,119 +12,133 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-    body, * {
-
+    * {
         font-family: 'Roboto', sans-serif;
     }
+
+    body {
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-gray-900">
     <div class=" mt-8 p-4 lg:mx-16 xl:mx-32">
         <div class="max-w-xl mx-auto">
             <div class="rounded-lg">
                 <div class="flex flex-col md:flex-row justify-between items-center mb-6">
                     <section class="mb-6 md:mb-0 sm:text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
                         <h1 class="text-2xl font-bold mb-2">Ken Serikawa</h1>
-                        <p class="text-gray-600">Backend Developer</p>
-                        <p class="text-gray-600">
-                            <span id="email" class="cursor-pointer text-blue-500" onclick="copyToClipboard('kenserikawalucio@gmail.com')">kenserikawalucio@gmail.com</span>
+                        <p class="text-gray-100">Backend Developer</p>
+                        <p class="text-gray-100">
+                            <span id="email" class="cursor-pointer text-gray-100" onclick="copyToClipboard('kenserikawalucio@gmail.com')">kenserikawalucio@gmail.com</span>
+                            <span id="copiedMessage" class="text-green-500 m-2 hidden sm:text-center">Copied!</span>
                         </p>
-                        <span id="copiedMessage" class="text-green-500 m-2 hidden">Copied!</span>
                     </section>
+
                     <div class="flex space-x-4">
-                        <p class="text-gray-600">
-                            <a href="https://github.com/kenserikawa" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
+                        <p class="text-gray-100">
+                            <a href="https://github.com/kenserikawa" class="text-yellow-200 hover:text-yellow-400" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github fa-lg mr-1"></i> GitHub
                             </a>
                         </p>
-                        <p class="text-gray-600">
-                            <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
+                        <p class="text-gray-100">
+                            <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-blue-100 hover:text-blue-300" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-linkedin-in fa-lg mr-1"></i> LinkedIn
                             </a>
                         </p>
                     </div>
                 </div>
                 </div>
-                <hr class="mb-6 border-t border-gray-300">
+                <hr class="mb-6 border-t border-gray-800">
+                <!-- Introduction -->
+                <section class="mb-6">
+                    <h2 class="text-xl font-semibold mb-2"><code class="border border-black">whoami</code></h2>
+                    <p class="text-gray-100">
+                        I am a dedicated and curious individual with a passion for programming, seeking opportunities as a backend developer. 
+                        Bringing <span id="lifeDays" class="text-green-400">...</span> days of life experience, I am committed to contributing to the ever-evolving field of technology through continuous learning and hands-on problem-solving.
+                    </p>
+                </section>
                 <!-- Work Experience Section -->
                 <section class="mb-6">
-                    <h2 class="text-xl font-semibold mb-2">Work Experience</h2>
+                    <h2 class="text-xl font-semibold mb-2"><code>experience</code></h2>
 
                     <!-- Job 1 -->
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold">Backend Developer @ Alten </h3>
-                        <p class="text-gray-600">Currently - Jan 2021</p>
-                        <p class="text-gray-600 pb-2">
+                        <h3 class="text-lg font-semibold text-gray-100 pb-1">Backend Developer @ <a href="https://www.alten.es/" target="blank">Alten</a> </h3>
+                        <p class="text-gray-100"><span class="text-yellow-300 font-bold">Currently</span> - Jan 2021</p>
+                        <p class="text-gray-100 pb-2">
                         As a Backend Developer at Alten, I specialize in developing microservices and middleware solutions for Content Management Systems (CMS) using backend frameworks from PHP (Symfony) and Typescript (NestJs). This work goes beyond just implementing key functionalities; it translates into a noticeable improvement in system performance. My adept management of cache layers, queues, and events has significantly optimized operational efficiency, showcasing my ability to not only meet technical requirements but also positively impact the core functionality of the system.
                         </p>
-                        <p class="text-gray-600">
+                        <p class="text-gray-100">
                         Additionally, I took the lead on a crucial database migration project, transforming NoSQL collections into a more structured format like XML. This initiative wasn't just a significant technical milestone; it also resulted in increased flexibility and organization in data management, marking a tangible advancement in the architecture and efficiency of the system.
                         </p>
                     </div>
 
                     <!-- Job 2 -->
                     <div class="mb-4">
-                        <h3 class="text-lg font-semibold">Full-Stack Developer @ Impactware Solutions S.L.</h3>
-                        <p class="text-gray-600">May 2020 - Apr 2019</p>
+                        <h3 class="text-lg font-semibold pb-1">Full-Stack Developer @ Impactware</h3>
+                        <p class="text-gray-100">May 2020 - Apr 2019</p>
                         
-                        <p class="text-gray-600">
+                        <p class="text-gray-100">
                         Achieved the development of client-requested applications, overseeing data modeling and entity creation, while seamlessly integrating back-end functionality with custom services and third-party packages. Conducted web scraping and data enrichment, interfaced with diverse RESTful APIs, and designed and implemented user-friendly templates with a range of interactive features and styles.
                         </p>
                     </div>
                 </section>
-                <hr class="my-2 border-t border-gray-300">
+                <hr class="my-2 mb-6 border-gray-800">
 
                 <!-- Skills Section -->
                 <section>
-                    <h2 class="text-xl font-semibold mb-2">Skills</h2>
+                    <h2 class="text-xl font-semibold mb-2"><code>skills</code></h2>
                     <ul class="list-inside">
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">💻 <strong>PHP 8 (Symfony 5)</strong></span>
+                            <span class="text-gray-100 mr-2">💻 PHP 8 (Symfony 6)</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🌐 <strong>Typescript (NodeJs)</strong></span>
+                            <span class="text-gray-100 mr-2">🌐 Typescript (NestJs)</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">♾️ <strong>Complete understanding of HTTP request lifecycle</strong></span>
+                            <span class="text-gray-100 mr-2">♾️ Complete understanding of HTTP request lifecycle</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🛢️ <strong>MySQL</strong></span>
+                            <span class="text-gray-100 mr-2">🗄️ MySQL</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🍃 <strong>MongoDB</strong></span>
+                            <span class="text-gray-100 mr-2">🍃 MongoDB</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🐱 <strong>Git bash</strong></span>
+                            <span class="text-gray-100 mr-2">🗃️ Git bash</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🐳 <strong>Docker</strong></span>
+                            <span class="text-gray-100 mr-2">🐳 Docker</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🐇 <strong>RabbitMQ</strong></span>
+                            <span class="text-gray-100 mr-2">🐇 RabbitMQ</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🏗️ <strong>POO, MVC, Ports and Adapters architecture</strong></span>
+                            <span class="text-gray-100 mr-2">🏗️ POO, MVC, Ports and Adapters architecture</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🧪 <strong>Testing</strong></span>
+                            <span class="text-gray-100 mr-2">🧪 Testing</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🐧 <strong>Linux CLI</strong></span>
+                            <span class="text-gray-100 mr-2">🐧 Linux CLI</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🌠 <strong>RESTful API integration and management</strong></span>
+                            <span class="text-gray-100 mr-2">🌠 RESTful API integration and management</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">⚛️ <strong>JS frameworks: Vue.js, Express & React</strong></span>
+                            <span class="text-gray-100 mr-2">⚛️ JS frameworks: Vue.js, Express & React</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🎨 <strong>CSS frameworks: Bootstrap, Materialize, Bulma</strong></span>
+                            <span class="text-gray-100 mr-2">🎨 CSS frameworks: Bootstrap, Materialize, Bulma</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">🚀 <strong>CD/CI with Jenkins</strong></span>
+                            <span class="text-gray-100 mr-2">🚀 CD/CI with Jenkins</span>
                         </li>
                         <li class="mb-2 flex items-center">
-                            <span class="text-gray-600 mr-2">📱🌐 <strong>Responsive and cross-browser design</strong></span>
+                            <span class="text-gray-100 mr-2">📱🌐 Responsive and cross-browser design</span>
                         </li>
                     </ul>
                 </section>
@@ -148,8 +162,24 @@
 
         setTimeout(function() {
             copiedMessage.classList.add("hidden");
-        }, 20000);
+        }, 2000);
     }
+
+    function returnDaysSince(date) {
+        var startDate = new Date(date); 
+        var currentDate = new Date();
+
+        var timeDifference = currentDate.getTime() - startDate.getTime();
+
+        var daysSince = Math.floor(timeDifference / (1000 * 3600 * 24));
+
+        return daysSince;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('lifeDays').innerText = returnDaysSince('1996/05/29');
+        document.getElementById('devDays').innerText = returnDaysSince('2019/05/21');
+    });
 </script>
 </body>
 </html>
