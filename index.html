@@ -19,116 +19,119 @@
     </style>
 </head>
 <body class="bg-white">
-    <div class="container mx-auto mt-8 p-4">
-        <div class="bg-white p-6 rounded-lg ">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
-                <section class="mb-6 md:mb-0 sm:text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
-                    <h1 class="text-2xl font-bold mb-2">Ken Serikawa</h1>
-                    <p class="text-gray-600">Backend Developer</p>
-                    <p class="text-gray-600">
-                        <span id="email" class="cursor-pointer text-blue-500" onclick="copyToClipboard('kenserikawalucio@gmail.com')">kenserikawalucio@gmail.com</span>
-                    </p>
-                    <span id="copiedMessage" class="text-green-500 m-2 hidden">Copied!</span>
+    <div class=" mt-8 p-4 lg:mx-16 xl:mx-32">
+        <div class="max-w-xl mx-auto">
+            <div class="bg-white py-6 rounded-lg">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                    <section class="mb-6 md:mb-0 sm:text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
+                        <h1 class="text-2xl font-bold mb-2">Ken Serikawa</h1>
+                        <p class="text-gray-600">Backend Developer</p>
+                        <p class="text-gray-600">
+                            <span id="email" class="cursor-pointer text-blue-500" onclick="copyToClipboard('kenserikawalucio@gmail.com')">kenserikawalucio@gmail.com</span>
+                        </p>
+                        <span id="copiedMessage" class="text-green-500 m-2 hidden">Copied!</span>
+                    </section>
+                    <div class="flex space-x-4">
+                        <p class="text-gray-600">
+                            <a href="https://github.com/kenserikawa" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github fa-lg mr-1"></i> GitHub
+                            </a>
+                        </p>
+                        <p class="text-gray-600">
+                            <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in fa-lg mr-1"></i> LinkedIn
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                </div>
+                <hr class="mb-6 border-t border-gray-300">
+                <!-- Work Experience Section -->
+                <section class="mb-6">
+                    <h2 class="text-xl font-semibold mb-2">Work Experience</h2>
+
+                    <!-- Job 1 -->
+                    <div class="mb-4">
+                        <h3 class="text-lg font-semibold">Backend Developer @ Alten </h3>
+                        <p class="text-gray-600">Currently - Jan 2021</p>
+                        <p class="text-gray-600 pb-2">
+                        As a Backend Developer at Alten, I specialize in developing microservices and middleware solutions for Content Management Systems (CMS) using backend frameworks from PHP (Symfony) and Typescript (NestJs). This work goes beyond just implementing key functionalities; it translates into a noticeable improvement in system performance. My adept management of cache layers, queues, and events has significantly optimized operational efficiency, showcasing my ability to not only meet technical requirements but also positively impact the core functionality of the system.
+                        </p>
+                        <p class="text-gray-600">
+                        Additionally, I took the lead on a crucial database migration project, transforming NoSQL collections into a more structured format like XML. This initiative wasn't just a significant technical milestone; it also resulted in increased flexibility and organization in data management, marking a tangible advancement in the architecture and efficiency of the system.
+                        </p>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="mb-4">
+                        <h3 class="text-lg font-semibold">Full-Stack Developer @ Impactware Solutions S.L.</h3>
+                        <p class="text-gray-600">May 2020 - Apr 2019</p>
+                        
+                        <p class="text-gray-600">
+                        Achieved the development of client-requested applications, overseeing data modeling and entity creation, while seamlessly integrating back-end functionality with custom services and third-party packages. Conducted web scraping and data enrichment, interfaced with diverse RESTful APIs, and designed and implemented user-friendly templates with a range of interactive features and styles.
+                        </p>
+                    </div>
                 </section>
-                <div class="flex space-x-4">
-                    <p class="text-gray-600">
-                        <a href="https://github.com/kenserikawa" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github fa-lg mr-1"></i> GitHub
-                        </a>
-                    </p>
-                    <p class="text-gray-600">
-                        <a href="https://www.linkedin.com/in/ken-serikawa-42688a184" class="text-gray-600 hover:text-blue-500" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin-in fa-lg mr-1"></i> LinkedIn
-                        </a>
-                    </p>
-                </div>
+                <hr class="my-2 border-t border-gray-300">
+
+                <!-- Skills Section -->
+                <section>
+                    <h2 class="text-xl font-semibold mb-2">Skills</h2>
+                    <ul class="list-inside">
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">💻 <strong>PHP 8 (Symfony 5)</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🌐 <strong>Typescript (NodeJs)</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">♾️ <strong>Complete understanding of HTTP request lifecycle</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🛢️ <strong>MySQL</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🍃 <strong>MongoDB</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🐱 <strong>Git bash</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🐳 <strong>Docker</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🐇 <strong>RabbitMQ</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🏗️ <strong>POO, MVC, Ports and Adapters architecture</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🧪 <strong>Testing</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🐧 <strong>Linux CLI</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🌠 <strong>RESTful API integration and management</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">⚛️ <strong>JS frameworks: Vue.js, Express & React</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🎨 <strong>CSS frameworks: Bootstrap, Materialize, Bulma</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">🚀 <strong>CD/CI with Jenkins</strong></span>
+                        </li>
+                        <li class="mb-2 flex items-center">
+                            <span class="text-gray-600 mr-2">📱🌐 <strong>Responsive and cross-browser design</strong></span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
-            </div>
-            <hr class="my-2 border-t border-gray-300">
-            <!-- Work Experience Section -->
-            <section class="mb-6">
-                <h2 class="text-xl font-semibold mb-2">Work Experience</h2>
-
-                <!-- Job 1 -->
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold">Backend Developer @ Alten </h3>
-                    <p class="text-gray-600">Currently - Jan 2021</p>
-                    <p class="text-gray-600">
-                    As a Backend Developer at Alten, I specialize in developing microservices and middleware solutions for Content Management Systems (CMS) using backend frameworks from PHP (Symfony) and Typescript (NestJs). This work goes beyond just implementing key functionalities; it translates into a noticeable improvement in system performance. My adept management of cache layers, queues, and events has significantly optimized operational efficiency, showcasing my ability to not only meet technical requirements but also positively impact the core functionality of the system.
-                    </p>
-                    <p class="text-gray-600">
-                    Additionally, I took the lead on a crucial database migration project, transforming NoSQL collections into a more structured format like XML. This initiative wasn't just a significant technical milestone; it also resulted in increased flexibility and organization in data management, marking a tangible advancement in the architecture and efficiency of the system.
-                    </p>
-                </div>
-
-                <!-- Job 2 -->
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold">Full-Stack Developer @ Impactware Solutions S.L.</h3>
-                    <p class="text-gray-600">May 2020 - Apr 2019</p>
-                    
-                    <p class="text-gray-600">
-                    Achieved the development of client-requested applications, overseeing data modeling and entity creation, while seamlessly integrating back-end functionality with custom services and third-party packages. Conducted web scraping and data enrichment, interfaced with diverse RESTful APIs, and designed and implemented user-friendly templates with a range of interactive features and styles.
-                    </p>
-                </div>
-            </section>
-            <hr class="my-2 border-t border-gray-300">
-
-  <!-- Skills Section -->
-<section>
-    <h2 class="text-xl font-semibold mb-2">Skills</h2>
-    <ul class="list-inside">
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">💻 <strong>PHP 8 (Symfony 5)</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🌐 <strong>Typescript (NodeJs)</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">♾️ <strong>Complete understanding of HTTP request lifecycle</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🛢️ <strong>MySQL</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🍃 <strong>MongoDB</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🐱 <strong>Git bash</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🐳 <strong>Docker</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🐇 <strong>RabbitMQ</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🏗️ <strong>POO, MVC, Ports and Adapters architecture</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🧪 <strong>Testing</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🐧 <strong>Linux CLI</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🌠 <strong>RESTful API integration and management</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">⚛️ <strong>JS frameworks: Vue.js, Express & React</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🎨 <strong>CSS frameworks: Bootstrap, Materialize, Bulma</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">🚀 <strong>CD/CI with Jenkins</strong></span>
-        </li>
-        <li class="mb-2 flex items-center">
-            <span class="text-gray-600 mr-2">📱🌐 <strong>Responsive and cross-browser design</strong></span>
-        </li>
-    </ul>
-</section>
-
         </div>
+        
     </div>
 
 <script>
