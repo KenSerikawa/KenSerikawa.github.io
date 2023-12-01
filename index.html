@@ -28,8 +28,9 @@
     }
 
     #terminal-box {
-        border: 2px solid #555;
+        border: 2px solid #56A;
         padding: 20px;
+        
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
         background-color: #222;
@@ -38,7 +39,7 @@
 
     #terminal-tab {
         height: 25px;
-        background-color: #555;
+        background-color: #56A;
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
     }
@@ -230,43 +231,43 @@
         var timeDifference = currentDate.getTime() - startDate.getTime();
         var daysSince = Math.floor(timeDifference / (1000 * 3600 * 24));
         var formattedDays = daysSince.toLocaleString(undefined, { minimumIntegerDigits: 5 });
-        return formattedDays.replace(/^0+/, '');;
+        return formattedDays.replace(/^0+/, '');
     }
 
     function getUserAgent(){
         const userAgent = navigator.userAgent;
-    let os = 'Unknown OS';
-    let browser = 'Unknown Browser';
+        let os = 'Unknown OS';
+        let browser = 'Unknown Browser';
 
-    // Check for operating system
-    if (userAgent.includes('Windows')) {
-        os = 'windows';
-    } else if (userAgent.includes('Macintosh') || userAgent.includes('Mac OS')) {
-        os = 'macos';
-    } else if (userAgent.includes('Android')) {
-        os = 'android';
-    } else if (userAgent.includes('Linux')) {
-        os = 'linux';
-    } else if (userAgent.includes('iOS')) {
-        os = 'iOS';
-    }
+        // Check for operating system
+        if (userAgent.includes('Windows')) {
+            os = 'windows';
+        } else if (userAgent.includes('Macintosh') || userAgent.includes('Mac OS')) {
+            os = 'macos';
+        } else if (userAgent.includes('Android')) {
+            os = 'android';
+        } else if (userAgent.includes('Linux')) {
+            os = 'linux';
+        } else if (userAgent.includes('iOS')) {
+            os = 'iOS';
+        }
 
-    // Check for browser
-    if (userAgent.includes('Chrome')) {
-        browser = 'chrome';
-    } else if (userAgent.includes('Firefox')) {
-        browser = 'firefox';
-    } else if (userAgent.includes('Safari')) {
-        browser = 'safari';
-    } else if (userAgent.includes('Edge')) {
-        browser = 'microsoft Edge';
-    } else if (userAgent.includes('Opera') || userAgent.includes('OPR')) {
-        browser = 'opera';
-    } else if (userAgent.includes('MSIE') || userAgent.includes('Trident/')) {
-        browser = 'internetexplorer (why?)';
-    }
+        // Check for browser
+        if (userAgent.includes('Chrome')) {
+            browser = 'chrome';
+        } else if (userAgent.includes('Firefox')) {
+            browser = 'firefox';
+        } else if (userAgent.includes('Safari')) {
+            browser = 'safari';
+        } else if (userAgent.includes('Edge')) {
+            browser = 'microsoft Edge';
+        } else if (userAgent.includes('Opera') || userAgent.includes('OPR')) {
+            browser = 'opera';
+        } else if (userAgent.includes('MSIE') || userAgent.includes('Trident/')) {
+            browser = 'why.internetexplorer?';
+        }
 
-    return os + '.'+ browser;
+        return os + '.'+ browser;
     }
 
     function setScrollingTextTab() {
