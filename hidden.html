@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ken Serikawa | CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Press+Start+2P&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+    * {
+        margin: 0;
+        padding:0;
+    }
+
+    body {
+        color: #ddd;
+        font-family: 'Fira Code', monospace;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #terminal-box {
+        border: 2px solid #56A;
+        padding: 20px;
+        
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-color: #222222f;
+        display: inline-block;
+    }
+
+    #terminal-tab {
+        height: 25px;
+        background-color: #56A;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    #terminal {
+    }
+    .scrolling-container {
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .scrolling-text {
+        white-space: nowrap;
+        animation: scrollText 8s linear infinite; /* Adjust duration and timing function as needed */
+    }
+
+    @keyframes scrollText {
+        0% {
+            transform: translateX(103%);
+        }
+        100% {
+            transform: translateX(-117%);
+        }
+    }
+
+    .cube {
+        position: absolute;
+        top: 180vh;
+        left: 45vw;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #5566aa45;
+        transform-origin: top left;
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        -webkit-animation: cube 12s ease-in forwards infinite;
+                animation: cube 12s ease-in forwards infinite;
+    }
+    .cube:nth-child(2n) {
+        border-color: #5566aa45;
+    }
+    .cube:nth-child(2) {
+        -webkit-animation-delay: 2s;
+                animation-delay: 2s;
+        left: 25vw;
+        top: 40vh;
+        }
+        .cube:nth-child(3) {
+        -webkit-animation-delay: 4s;
+                animation-delay: 4s;
+        left: 75vw;
+        top: 140vh;
+    }
+    .cube:nth-child(4) {
+        -webkit-animation-delay: 6s;
+                animation-delay: 6s;
+        left: 90vw;
+        top: 90vh;
+    }
+    .cube:nth-child(5) {
+        -webkit-animation-delay: 8s;
+                animation-delay: 8s;
+        left: 10vw;
+        top: 85vh;
+    }
+    .cube:nth-child(6) {
+        -webkit-animation-delay: 10s;
+                animation-delay: 10s;
+        left: 50vw;
+        top: 110vh;
+    }
+
+    @-webkit-keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes cube {
+        from {
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            opacity: 1;
+        }
+        to {
+            transform: scale(20) rotate(960deg) translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+    </style>
+</head>
+<body class="bg-gray-900 ">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="p-4"style="max-width: 50rem;min-width: 10rem;">
+        <div id="terminal" class="animate__animated animate__fadeIn mx-auto">
+            <div id="terminal-tab" class=" scrolling-container">
+                <p class="text-gray-300 p-1 scrolling-text" id="scrollingText"><span id="userAgent">...</span>@kenserikawa.github.io</p>
+            </div>
+            <div id="terminal-box" class="">
+                <div class="w-100">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non vel consequatur dicta tenetur, officiis corporis illo eum ut animi repellat ratione reprehenderit iusto a! Accusantium harum amet ad sapiente totam? </p>
+                </div>
+                <div id="quiz-container" 
+                    hx-swap="innerHTML" 
+                    hx-target="#quiz-container" 
+                    hx-trigger="load"
+                    hx-get="https://opentdb.com/api.php?amount=10&category=18"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+ // Function to handle the quiz response and render it in the HTML
+    function handleQuizResponse(response) {
+        // Check if the response contains quiz data
+        if (response.results) {
+        console.log(response)
+            // Create an HTML string for quiz questions
+            let html = '<h2>Quiz Questions</h2>';
+            html += '<ul>';
+            response.results.forEach((question) => {
+                html += '<li>';
+                html += '<strong>' + question.question + '</strong>';
+                html += '<ul>';
+                if (question.type === 'multiple') {
+                    question.incorrect_answers.forEach((incorrectAnswer) => {
+                        html += '<li>' + incorrectAnswer + '</li>';
+                    });
+                }
+                html += '<li>' + question.correct_answer + '</li>';
+                html += '</ul>';
+                html += '</li>';
+            });
+            html += '</ul>';
+            console.log('hey')
+            // Display the quiz questions in the container
+            document.getElementById('quiz-container').innerHTML = html;
+        } else {
+            // Handle error or no quiz data
+            console.error('Error fetching quiz data');
+        }
+    }
+
+    // Register the handleQuizResponse function to be called after the fetch
+    htmx.on('htmx:afterRequest', function (event) {
+        if (event.detail.xhr.responseURL.includes('opentdb.com')) {
+            // Parse the JSON response
+            const jsonResponse = JSON.parse(event.detail.xhr.responseText);
+            // Call the handleQuizResponse function with the parsed JSON
+            handleQuizResponse(jsonResponse);
+        }
+    });
+
+    function getUserAgent(){
+        const userAgent = navigator.userAgent;
+        let os = 'Unknown OS';
+        let browser = 'Unknown Browser';
+
+        // Check for operating system
+        if (userAgent.includes('Windows')) {
+            os = 'windows';
+        } else if (userAgent.includes('Macintosh') || userAgent.includes('Mac OS')) {
+            os = 'macos';
+        } else if (userAgent.includes('Android')) {
+            os = 'android';
+        } else if (userAgent.includes('Linux')) {
+            os = 'linux';
+        } else if (userAgent.includes('iOS')) {
+            os = 'iOS';
+        }
+
+        // Check for browser
+        if (userAgent.includes('Chrome')) {
+            browser = 'chrome';
+        } else if (userAgent.includes('Firefox')) {
+            browser = 'firefox';
+        } else if (userAgent.includes('Safari')) {
+            browser = 'safari';
+        } else if (userAgent.includes('Edge')) {
+            browser = 'microsoft Edge';
+        } else if (userAgent.includes('Opera') || userAgent.includes('OPR')) {
+            browser = 'opera';
+        } else if (userAgent.includes('MSIE') || userAgent.includes('Trident/')) {
+            browser = 'why.internetexplorer?';
+        }
+
+        return os + '.'+ browser;
+    }
+
+    function setScrollingTextTab() {
+        const scrollSpeed = 50; // Higher value means slower scrolling
+
+        // Get the width of the scrolling text container
+        const containerWidth = document.querySelector('.scrolling-container').offsetWidth;
+
+        // Get the width of the scrolling text itself
+        const textWidth = document.querySelector('.scrolling-text').offsetWidth;
+
+        // Calculate the duration based on the text and container width
+        const duration = (textWidth / containerWidth) * scrollSpeed * 1000;
+
+        // Apply the dynamic duration to the animation
+        document.styleSheets[0].insertRule(`@keyframes scrollText { 0% { transform: translateX(${containerWidth}px); } 100% { transform: translateX(-${textWidth}px); } }`, 0);
+        document.styleSheets[0].insertRule(`.scrolling-text { animation: scrollText linear ${duration}ms infinite; }`, 0);
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('userAgent').innerText = getUserAgent();
+        setScrollingTextTab();
+    });
+</script>
+</body>
+</html>
