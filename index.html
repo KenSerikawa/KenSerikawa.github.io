@@ -196,21 +196,17 @@
                     <!-- Work Experience -->
                     <section class="mb-6">
                         <h2 class="text-xl font-semibold mb-2"><code><span class="text-indigo-400">$</span> experience</code></h2>
-                        <div class="mb-4">
-                            <a onclick="revealText(0)">
-                                <h3 class="text-gray-300 text-lg font-semibold text-gray-100 pb-1">Backend Developer @ <a href="https://www.alten.es/" target="blank">Alten</a> </h3>
-                                <p class="text-gray-100 pb-3"><span class="text-yellow-300 font-bold">Currently</span> - <span class="text-red-300">Jan 2021</span></p>
-                                <p id="0" class="text-gray-100 pb-2">
-                                </p>
-                            </a>
+                        <div class="mb-4 cursor-help hover:scale-125" onclick="revealText(0)">
+                            <h3 class="text-gray-300 text-lg font-semibold text-gray-100 pb-1">Backend Developer @ <a href="https://www.alten.es/" target="blank">Alten</a> </h3>
+                            <p class="text-gray-100 pb-3"><span class="text-yellow-300 font-bold">Currently</span> - <span class="text-red-300">Jan 2021</span></p>
+                            <p id="0" class="text-gray-100 pb-2">
+                            </p>
                         </div>
-                        <div class="mb-4">
-                            <a onclick="revealText(1)">
-                                <h3 class="text-gray-300 text-lg font-semibold pb-1">Full-Stack Developer @ <a href="http://www.impactware.com/" target="_blank">Impactware</a></h3>
-                                <p class="text-gray-100 pb-3"><span class="text-red-300">May 2020</span> - <span class="text-red-300">Apr 2019</span></p>
-                                <p id="1" class="text-gray-100">
-                                </p>
-                            </a>
+                        <div class="mb-4  cursor-help " onclick="revealText(1)">
+                            <h3 class="text-gray-300 text-lg font-semibold pb-1">Full-Stack Developer @ <a href="http://www.impactware.com/" target="_blank">Impactware</a></h3>
+                            <p class="text-gray-100 pb-3"><span class="text-red-300">May 2020</span> - <span class="text-red-300">Apr 2019</span></p>
+                            <p id="1" class="text-gray-100">
+                            </p>
                         </div>
                     </section>
 
@@ -399,6 +395,7 @@
 
     function revealText(id) {
         var textNode = document.getElementById(id);
+        textNode.innerHTML = '';
         let index = 0;
         let speed = 10;
         const text = hiddenText[id];
