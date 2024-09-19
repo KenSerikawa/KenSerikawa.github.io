@@ -18,10 +18,16 @@
         margin: 0;
         padding:0;
     }
+    :root {
+        --terminal-secondary-color: #56A;
+        --terminal-bg-color: rgb(23, 27, 40);
+        --terminal-font-color: #ddd;
+        --terminal-font-family: 'Fira Code', monospace;
+    }
 
     body {
-        color: #ddd;
-        font-family: 'Fira Code', monospace;
+        color: var(--terminal-font-color);
+        font-family: var(--terminal-font-family);
         margin: 0;
         display: flex;
         align-items: center;
@@ -29,18 +35,17 @@
     }
 
     #terminal-box {
-        border: 2px solid #56A;
+        border: 2px solid var(--terminal-secondary-color);
         padding: 20px;
-        
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
-        background-color: #222222f;
+        background-color: var(--terminal-bg-color);
         display: inline-block;
     }
 
     #terminal-tab {
         height: 25px;
-        background-color: #56A;
+        background-color: var(--terminal-secondary-color);
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
     }
@@ -230,6 +235,8 @@
                                 <ul class="text-gray-100 ml-6"><li>├ NestJs</li></ul>
                                 <ul class="text-gray-100 ml-6"><li>└ Express</li></ul> 
                             </li>
+                        </ul>
+                        <ul class="list-inline">
                             <li class="mb-2 flex items-center">
                                 <span class="text-gray-100 mr-2">🔁 Complete understanding of HTTP request lifecycle</span>
                             </li>
