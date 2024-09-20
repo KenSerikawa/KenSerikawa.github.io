@@ -138,6 +138,54 @@
             opacity: 0;
         }
     }
+
+    .hover-text:hover i::after {
+        visibility: visible;
+        opacity: 1;
+    }
+    .hover-text i {
+        position: relative;
+    }
+
+    .hover-text i::after {
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 1.2em;
+        background-color: var(--terminal-secondary-color);
+        position: absolute;
+        right: 0;
+        top: 0.08em;
+        left: 0.1em;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .hover-text:hover i::after {
+        visibility: visible;
+        animation: blink 1s steps(1, start) infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        50% {
+            opacity: 0;
+            visibility: hidden;
+        }
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .hover-animate:hover {
+        animation-duration: 1s; /* Optional: Control animation duration */
+        animation-fill-mode: both; /* Optional: Ensure the animation state persists */
+        animation-name: handShake; /* Apply the bounce animation */
+    }
     </style>
 </head>
 <body class="bg-gray-900 ">
@@ -156,8 +204,8 @@
                 <div class="rounded-lg">
                     <div class="flex flex-col md:flex-row justify-between items-center mb-6">
                         <section class="mb-6 md:mb-0 sm:text-center md:text-left lg:text-left xl:text-left 2xl:text-left">
-                            <h1 class="text-2xl font-bold mb-2">Ken Serikawa</h1>
-                            <p class="text-gray-100">Backend Developer</p>
+                            <h1 class="text-2xl font-bold mb-2 hover-text">Ken Serikawa<i></i></h1>
+                            <p class="text-gray-100 hover-text">Backend Developer<i></i></p>
                             <p class="text-gray-100">
                                 <i class="fa fa-clipboard" aria-hidden="true"></i>
                                 <span id="email" class="cursor-pointer text-gray-100" onclick="copyToClipboard('kenserikawa.dev@gmail.com')">kenserikawa.dev@gmail.com</span>
@@ -181,23 +229,23 @@
                 </div>
                     <!-- Introduction -->
                     <section class="mb-6">
-                        <h2 class="text-xl font-semibold mb-2"><code><span class="text-indigo-400">$</span> whoami</code></h2>
-                        <p class="text-gray-100">
-                            Bringing <span id="lifeDays" class="font-semibold text-blue-400">...</span> days of life experience, I am committed to contributing to the ever-evolving field of technology through continuous learning and hands-on problem solving. I am currently on day <span id="devDays" class="font-semibold text-green-400">...</span> as a tech enthusiast.
+                        <h2 class="text-xl font-semibold mb-2"><code><span class="text-indigo-400 ">$</span> whoami </code></h2>
+                        <p class="text-gray-100 hover-text">
+                            Bringing <span id="lifeDays" class="font-semibold text-blue-400">...</span> days of life experience, I am committed to contributing to the ever-evolving field of technology through continuous learning and hands-on problem solving. I am currently on day <span id="devDays" class="font-semibold text-green-400">...</span> as a tech enthusiast.<i></i>
                         </p>
                     </section>
                      <!-- Interests -->
                     <section class="mb-6">
                         <h2 class="text-xl font-semibold mb-2"><code><span class="text-indigo-400">$</span> interests</code></h2>
-                        <p class="text-gray-100">
-                            Web development with DDD or TDD Architecture, Container Orchestration, CI/CD, Blockchain and Machine Learning.
+                        <p class="text-gray-100 hover-text">
+                            Web development with DDD or TDD Architecture, Container Orchestration, CI/CD, Blockchain and Machine Learning.<i></i>
                         </p>
                     </section>
                     <!-- Work Experience -->
                     <section class="mb-6">
                         <h2 class="text-xl font-semibold mb-2"><code><span class="text-indigo-400">$</span> experience</code></h2>
                         <div class="mb-4 cursor-help hover:scale-125" onclick="revealText(0)">
-                            <h3 class="text-gray-300 text-lg font-semibold text-gray-100 pb-1">Backend Developer @ <a href="https://www.alten.es/" target="blank">Alten</a> </h3>
+                            <h3 class="animate__animated hover-animate text-gray-300 text-lg font-semibold text-gray-100 pb-1">Backend Developer @ <a href="https://www.alten.es/" target="blank">Alten</a> </h3>
                             <p class="text-gray-100 pb-3"><span class="text-yellow-300 font-bold">Currently</span> - <span class="text-red-300">Jan 2021</span></p>
                             <p id="0" class="text-gray-100 pb-2">
                             </p>
@@ -232,70 +280,70 @@
                         </ul>
                         <ul class="list-inline">
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🔁 Complete understanding of HTTP request lifecycle</span>
+                                <span class="text-gray-100 mr-2 hover-text">🔁 Complete understanding of HTTP request lifecycle<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🗄️ MySQL / MariaDB</span>
+                                <span class="text-gray-100 mr-2 hover-text">🗄️ MySQL / MariaDB<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🍃 MongoDB 8.0</span>
+                                <span class="text-gray-100 mr-2 hover-text">🍃 MongoDB 8.0<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🗃️ Git bash</span>
+                                <span class="text-gray-100 mr-2 hover-text">🗃️ Git bash<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🐳 Docker</span>
+                                <span class="text-gray-100 mr-2 hover-text">🐳 Docker<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🐇 RabbitMQ</span>
+                                <span class="text-gray-100 mr-2 hover-text">🐇 RabbitMQ<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🏗️ POO, TDD, Ports and Adapters architecture</span>
+                                <span class="text-gray-100 mr-2 hover-text">🏗️ POO, TDD, Ports and Adapters architecture<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🧪 Testing</span>
+                                <span class="text-gray-100 mr-2 hover-text">🧪 Testing<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🐧 Linux</span>
+                                <span class="text-gray-100 mr-2 hover-text">🐧 Linux<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">✨ Bash Lover</span>
+                                <span class="text-gray-100 mr-2 hover-text">✨ Bash Lover<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🌠 RESTful API integration and management</span>
+                                <span class="text-gray-100 mr-2 hover-text">🌠 RESTful API integration and management<i></i></span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🔝 
-                                    <a href="https://htmx.org/" class="text-white hover:text-gray-300" target="_blank">HTMX</a>
+                                <span class="text-gray-100 mr-2 hover-text">🔝 
+                                    <a href="https://htmx.org/" class="text-white hover:text-gray-300" target="_blank">HTMX</a><i></i>
                                 </span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🖼️ JS frontend frameworks: 
+                                <span class="text-gray-100 mr-2 hover-text">🖼️ JS frontend frameworks: 
                                     <a href="https://nextjs.org/" class="text-white hover:text-gray-300" target="_blank">Next.js</a>, 
                                     <a href="https://vuejs.org/" class="text-white hover:text-gray-300" target="_blank">Vue</a> & 
-                                    <a href="https://reactjs.org/" class="text-white hover:text-gray-300" target="_blank">React</a>
+                                    <a href="https://reactjs.org/" class="text-white hover:text-gray-300" target="_blank">React</a><i></i>
                                 </span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🎨 CSS frameworks: 
+                                <span class="text-gray-100 mr-2 hover-text">🎨 CSS frameworks: 
                                     <a href="https://tailwindcss.com/" class="text-white hover:text-gray-300" target="_blank">Tailwind</a>, 
                                     <a href="https://getbootstrap.com/" class="text-white hover:text-gray-300" target="_blank">Bootstrap</a>, 
                                     <a href="https://materializecss.com/" class="text-white hover:text-gray-300" target="_blank">Materialize</a> & 
-                                    <a href="https://bulma.io/" class="text-white hover:text-gray-300" target="_blank">Bulma</a>
+                                    <a href="https://bulma.io/" class="text-white hover:text-gray-300" target="_blank">Bulma</a><i></i>
                                 </span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🚀 
-                                    <a href="https://www.jenkins.io/" class="text-white hover:text-gray-300" target="_blank">Jenkins</a>
+                                <span class="text-gray-100 mr-2 hover-text">🚀 
+                                    <a href="https://www.jenkins.io/" class="text-white hover:text-gray-300" target="_blank">Jenkins</a><i></i>
                                 </span>
                             </li>
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">🐱 
-                                    <a href="https://github.com/features/actions" class="text-white hover:text-gray-300" target="_blank">GH Actions</a>
+                                <span class="text-gray-100 mr-2 hover-text">🐱 
+                                    <a href="https://github.com/features/actions" class="text-white hover:text-gray-300" target="_blank">GH Actions</a><i></i>
                                 </span>
                             </li>                            
                             <li class="mb-2 flex items-center">
-                                <span class="text-gray-100 mr-2">📱 Responsive and cross-browser design</span>
+                                <span class="text-gray-100 mr-2 hover-text">📱 Responsive and cross-browser design</span><i></i>
                             </li>
                         </ul>
                     </section>
