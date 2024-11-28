@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+<!-- 
+                       ',
+            .-`-,\__
+              ."`   `,    
+            .'_.  ._  `;.
+        __ / `      `  `.\ .--.
+       /--,| 0)   0)     )`_.-,)
+      |    ;.-----.__ _-');   /
+       '--./         `.`/  `"`
+          :   '`      |.      
+          | \     /  //         
+           \ '---'  /'        
+            `------' \  
+            _/       `--...
+    -->
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
     * {
@@ -254,9 +269,14 @@ __                                                                __  __
                     <!-- Work Experience -->
                     <section class="mb-6">
                         <h2 class="text-xl font-semibold mb-2"><code><span class="text-indigo-400">$</span> experience</code></h2>
+                        <div class="mb-4 cursor-help hover:scale-125">
+                            <h3 class="animate__animated hover-animate text-gray-300 text-lg font-semibold text-gray-100 pb-1">Backend Developer @ <a href="https://www.primeit.es/" target="blank">Prime IT</a> </h3>
+                            <p class="text-gray-100 pb-3"><span class="text-yellow-300 font-bold">Currently</span> - <span class="text-red-300">Nov 2024</span></p>
+                            </p>
+                        </div>
                         <div class="mb-4 cursor-help hover:scale-125" onclick="revealText(0)">
                             <h3 class="animate__animated hover-animate text-gray-300 text-lg font-semibold text-gray-100 pb-1">Backend Developer @ <a href="https://www.alten.es/" target="blank">Alten</a> </h3>
-                            <p class="text-gray-100 pb-3"><span class="text-yellow-300 font-bold">Currently</span> - <span class="text-red-300">Jan 2021</span></p>
+                            <p class="text-gray-100 pb-3"><span class="text-red-300">Nov 2024</span> - <span class="text-red-300">Jan 2021</span></p>
                             <p id="0" class="text-gray-100 pb-2">
                             </p>
                         </div>
@@ -361,21 +381,6 @@ __                                                                __  __
             </div>
         </div>
     </div>
-    <!-- 
-                       ',
-            .-`-,\__
-              ."`   `,
-            .'_.  ._  `;.
-        __ / `      `  `.\ .--.
-       /--,| 0)   0)     )`_.-,)
-      |    ;.-----.__ _-');   /
-       '--./         `.`/  `"`
-          :   '`      |.      
-          | \     /  //         
-           \ '---'  /'        
-            `------' \  
-Monke vibes  _/       `--...
-    -->
 <script>
     function copyToClipboard(text) {
         var tempInput = document.createElement("input");
@@ -467,20 +472,22 @@ Monke vibes  _/       `--...
 
     function revealText(id) {
         var textNode = document.getElementById(id);
-        textNode.innerHTML = '';
-        let index = 0;
-        let speed = 10;
-        const text = hiddenText[id];
-        
-        function typeCharacter() {
-            if (index < text.length) {
-                textNode.innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeCharacter, speed);  // Recursive call to display the next character
+        if (textNode.innerHTML == '') {
+            textNode.innerHTML = '';
+            let index = 0;
+            let speed = 10;
+            const text = hiddenText[id];
+            
+            function typeCharacter() {
+                if (index < text.length) {
+                    textNode.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeCharacter, speed);  // Recursive call to display the next character
+                }
             }
+            typeCharacter(); 
         }
 
-        typeCharacter(); 
     }
 
 </script>
